@@ -102,7 +102,7 @@ Tras ejecutar el *script* de *benchmarking* buscando el registro con el ID `9999
 | Tipo de Base de Datos | Estructura Subyacente | Complejidad Algorítmica | Tiempo Promedio de Respuesta |
 | :--- | :--- | :--- | :--- |
 | **Desordenada (Sin Índice)** | Lista Plana (Secuencial) | $O(n)$ | ~ 115.00 ms |
-| **Ordenada (Con Índice)** | Árbol B (B-Tree) | $O(\log n)$ | ~ 0.00 ms |
+| **Ordenada (Con Índice)** | Árbol B (B-Tree) | $O(\log n)$ | ~ 0.02 ms |
 
 **Conclusión del Experimento:**
 Se evidenció de manera empírica que la base de datos sin indexar colapsa bajo el peso de un *Full Table Scan*, obligando al motor de SQLite a leer linealmente un millón de registros en el disco duro para asegurar la búsqueda. Por el contrario, la base de datos respaldada por la estructura **B-Tree** logró ubicar la fila solicitada de forma casi instantánea. 
