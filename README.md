@@ -8,15 +8,15 @@
 </p>
 
 ## 📝 Descripción
-[cite_start]Este proyecto analiza la eficiencia de las estructuras de datos aplicadas a bases de datos a gran escala[cite: 44]. [cite_start]Comparamos el rendimiento de una **búsqueda lineal** frente a una **búsqueda indexada mediante B-Trees** utilizando un dataset de salud estudiantil con 1,000,000 de registros[cite: 11, 21].
+Este proyecto analiza la eficiencia de las estructuras de datos aplicadas a bases de datos a gran escala. Comparamos el rendimiento de una **búsqueda lineal** frente a una **búsqueda indexada mediante B-Trees** utilizando un dataset de salud estudiantil con 1,000,000 de registros.
 
 ## 📂 Dataset
-* [cite_start]**Fuente:** [Student Health Dataset - Kaggle](https://www.kaggle.com/datasets/ayeshasiddiqa123/student-health)[cite: 24].
+* **Fuente:** [Student Health Dataset - Kaggle](https://www.kaggle.com/datasets/ayeshasiddiqa123/student-health).
 * **Descripción:** Contiene información sobre salud física y mental de estudiantes, incluyendo niveles de estrés, actividad física y métricas de salud en 1 millón de filas y 21 columnas.
 
 ## ⚙️ Tecnologías
-* [cite_start]**Lenguaje:** Python 3.x[cite: 26].
-* [cite_start]**Librerías:** `pandas` para manejo de datos, `sqlite3` para el motor de base de datos y `time` para métricas de rendimiento[cite: 27].
+* **Lenguaje:** Python 3.x.
+* **Librerías:** `pandas` para manejo de datos, `sqlite3` para el motor de base de datos y `time` para métricas de rendimiento.
 
 ---
 
@@ -26,7 +26,7 @@
 <summary><b>Click para ver detalles técnicos (Algoritmia y Matemáticas)</b></summary>
 
 ### Fundamentos del B-Tree
-Para optimizar la recuperación de información, implementamos un índice en SQLite que utiliza un **B-Tree**. [cite_start]Esta estructura permite una complejidad de búsqueda de $O(\log n)$[cite: 9, 29, 61].
+Para optimizar la recuperación de información, implementamos un índice en SQLite que utiliza un **B-Tree**. Esta estructura permite una complejidad de búsqueda de $O(\log n)$.
 
 **Comparativa de Complejidad:**
 | Método | Estructura | Complejidad | Pasos (n=1M) |
