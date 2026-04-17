@@ -37,7 +37,7 @@ Para optimizar la recuperación de información, implementamos un índice en SQL
 </details>
 
 ## 🚀 Ejecución
-Para replicar los resultados, clona este repositorio y ejecuta:
+Para ejecutar el proyecto y replicar la demostración de rendimiento, primero se debe descargar el dataset student_mental_health_burnout_1M.csv y ubicarlo en el entorno de trabajo. Luego, es necesario actualizar la ruta del archivo en el script, dentro de la función pd.read_csv(), apuntando a la ubicación exacta, y ejecutar el código en su totalidad. El programa se encargará automáticamente de procesar el millón de registros, generar las dos bases de datos físicas (una con escaneo secuencial y otra indexada) y realizar la búsqueda de prueba. Finalmente, el script imprimirá directamente en la consola los tiempos de respuesta de ambos métodos junto con el cálculo exacto de mejora, evidenciando numéricamente la eficiencia de la estructura B-Tree.
 ```bash
 import pandas as pd
 import sqlite3
@@ -87,3 +87,10 @@ print(f"el tioempo de ejecucion con {tiempo_idx:.4F}")
 mejora = tiempo_caos/tiempo_idx
 
 print(f"Tiempo de mejor es {mejora}")
+
+
+## 📝 Autores
+Alber Dubian Ramirez Giraldo
+Samuel Isaac Acevedo Gómez
+Nauer Suaza Isaza
+
