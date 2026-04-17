@@ -88,10 +88,11 @@ mejora = tiempo_caos/tiempo_idx
 
 print(f"Tiempo de mejor es {mejora}")
 ```
-## 📝 Autores (Grupo 6)
-Alber Dubian Ramirez Giraldo \n
-Samuel Isaac Acevedo Gómez \n
-Nauer Suaza Isaza 
+## 👥 Autores (Equipo 6)
+
+* 👨‍💻 **Alber Dubián Ramírez Giraldo**
+* 👨‍💻 **Samuel Isaac Acevedo Gómez**
+* 👨‍💻 **Nauer Suaza Isaza**
 
 
 
