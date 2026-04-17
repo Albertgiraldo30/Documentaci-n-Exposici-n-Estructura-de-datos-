@@ -42,6 +42,7 @@ Para replicar los resultados, clona este repositorio y ejecuta:
 import pandas as pd
 import sqlite3
 import time
+import matplotlib.pyplot as plt
 
 data = pd.read_csv("/content/student_mental_health_burnout_1M.csv")
 
@@ -76,7 +77,7 @@ def busqueda(db_fila,e):
 
 buscar = 999999
 
-res1, tiempo_caos = busqueda("Db_ordenada.db", buscar)
+res1, tiempo_caos = busqueda("Db_desordenada.db", buscar)
 print(f"el tioempo de ejecucion sin {tiempo_caos:.4F}")
 
 res2, tiempo_idx = busqueda("Db_ordenada.db", buscar)
