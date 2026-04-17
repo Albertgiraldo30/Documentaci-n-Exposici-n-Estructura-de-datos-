@@ -7,8 +7,13 @@
   <img src="https://img.shields.io/badge/Pandas-150458?style=for-the-badge&logo=pandas&logoColor=white" alt="Pandas" />
 </p>
 
-## 📝 Descripción
-Este proyecto analiza la eficiencia de las estructuras de datos aplicadas a bases de datos a gran escala. Comparamos el rendimiento de una **búsqueda lineal** frente a una **búsqueda indexada mediante B-Trees** utilizando un dataset de salud estudiantil con 1,000,000 de registros.
+## 📝 Descripción:
+
+En las bases de datos , guardar un millón de datos es la parte fácil; el verdadero reto algorítmico es **encontrarlos rápido**. 
+
+Cuando una base de datos no está indexada, el motor guarda la información usando una estructura de datos ineficiente para búsquedas: una **lista plana** (arreglo lineal). Encontrar un registro específico allí obliga al sistema a realizar un escaneo secuencial (Full Table Scan) con una complejidad de `O(n)`. Esto significa tener que revisar fila por fila hasta encontrar la coincidencia, un proceso que ahoga el procesador y colapsa los sistemas cuando los datos escalan.
+
+Este proyecto resuelve este problema aplicando una estructura de datos avanzada: el **Árbol B (B-Tree)**. Al crear un índice, forzamos a la base de datos a organizar la información en nodos jerárquicos y matemáticamente balanceados. Esto cambia las reglas del juego, reduciendo la complejidad de búsqueda a `O(log n)`. Utilizamos un dataset de 1.000.000 de registros para demostrar empíricamente cómo el simple cambio de una estructura lineal a una estructura de árbol reduce los tiempos de consulta a casi cero milisegundos.
 
 ## 📂 Dataset
 * **Fuente:** [Student Health Dataset - Kaggle](https://www.kaggle.com/datasets/ayeshasiddiqa123/student-health).
