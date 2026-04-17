@@ -39,4 +39,50 @@ Para optimizar la recuperación de información, implementamos un índice en SQL
 ## 🚀 Ejecución
 Para replicar los resultados, clona este repositorio y ejecuta:
 ```bash
-python main.py
+import pandas as pd
+import sqlite3
+import time
+
+data = pd.read_csv("/content/student_mental_health_burnout_1M.csv")
+
+data.insert(0,"estudiante_id", range(1, len(data) + 1))
+
+Db_desordenada=sqlite3.connect("Db_desordenada.db")
+data.to_sql("estudiante",Db_desordenada, index=False, if_exists="replace")
+Db_desordenada.close()
+
+
+Db_ordenada=sqlite3.connect("Db_ordenada.db")
+data.to_sql("estudiante",Db_ordenada, index=False, if_exists="replace")
+cursor = Db_ordenada.cursor()
+cursor.execute("CREATE INDEX idx_estudiante ON estudiante(estudiante_id);")
+Db_ordenada.close()
+
+print("Bases de datos creada correctamente")
+
+
+def busqueda(db_fila,e):
+  conn = sqlite3.connect(db_fila)
+  cursor = conn.cursor()
+
+  inicio= time.time()
+  cursor.execute("SELECT *FROM estudiante WHERE estudiante_id = ?",(e,))
+  resultado = cursor.fetchone()
+  fin = time.time()
+  conn.close()
+  tiempo_ms = (fin-inicio)*1000
+
+  return resultado , tiempo_ms
+
+buscar = 999999
+
+res1, tiempo_caos = busqueda("Db_ordenada.db", buscar)
+print(f"el tioempo de ejecucion sin {tiempo_caos:.4F}")
+
+res2, tiempo_idx = busqueda("Db_ordenada.db", buscar)
+print(f"el tioempo de ejecucion con {tiempo_idx:.4F}")
+
+
+mejora = tiempo_caos/tiempo_idx
+
+print(f"Tiempo de mejor es {mejora}")
