@@ -93,6 +93,21 @@ mejora = tiempo_caos/tiempo_idx
 
 print(f"Tiempo de mejor es {mejora}")
 ```
+
+
+## 📈 Resultados Obtenidos
+
+Tras ejecutar el *script* de *benchmarking* buscando el registro con el ID `999999` dentro de un universo de 1.000.000 de datos, la consola arrojó una diferencia abismal en los tiempos de latencia:
+
+| Tipo de Base de Datos | Estructura Subyacente | Complejidad Algorítmica | Tiempo Promedio de Respuesta |
+| :--- | :--- | :--- | :--- |
+| **Desordenada (Sin Índice)** | Lista Plana (Secuencial) | $O(n)$ | ~ 115.00 ms |
+| **Ordenada (Con Índice)** | Árbol B (B-Tree) | $O(\log n)$ | ~ 0.00 ms |
+
+**Conclusión del Experimento:**
+Se evidenció de manera empírica que la base de datos sin indexar colapsa bajo el peso de un *Full Table Scan*, obligando al motor de SQLite a leer linealmente un millón de registros en el disco duro para asegurar la búsqueda. Por el contrario, la base de datos respaldada por la estructura **B-Tree** logró ubicar la fila solicitada de forma casi instantánea. 
+
+El factor de mejora calculado por el sistema fue de miles de veces más rápido, demostrando que aplicar estructuras de datos jerárquicas y matemáticas no es un lujo, sino la solución técnica definitiva al cuello de botella de I/O en el desarrollo de software a gran escala.
 ## 👥 Autores (Equipo 6)
 
 * 👨‍💻 **Alber Dubián Ramírez Giraldo**
