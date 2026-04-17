@@ -88,9 +88,17 @@ mejora = tiempo_caos/tiempo_idx
 
 print(f"Tiempo de mejor es {mejora}")
 
+<details>
+<summary><b>Click para ver detalles técnicos (Algoritmia y Matemáticas)</b></summary>
 
-## 📝 Autores
-Alber Dubian Ramirez Giraldo
-Samuel Isaac Acevedo Gómez
-Nauer Suaza Isaza
+### Fundamentos del B-Tree
+Para optimizar la recuperación de información, implementamos un índice en SQLite que utiliza un **B-Tree**. Esta estructura permite una complejidad de búsqueda de $O(\log n)$.
+
+**Comparativa de Complejidad:**
+| Método | Estructura | Complejidad | Pasos (n=1M) |
+| :--- | :--- | :--- | :--- |
+| **Secuencial** | Lista Plana | $O(n)$ | ~1,000,000 |
+| **Indexado** | B-Tree | $O(\log n)$ | ~3 - 5 |
+
+</details>
 
